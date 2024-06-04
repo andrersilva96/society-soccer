@@ -21,11 +21,9 @@
 </head>
 
 <body class="font-sans antialiased">
-    {{-- <x-banner /> --}}
-
     @livewire('navigation-menu')
 
-    <div class="border-bottom">
+    <div class="border-bottom mb-3">
         <div class="container">
             <h2 class="my-3">
                 @stack('title')
@@ -33,25 +31,15 @@
         </div>
     </div>
 
-{{--
-    <!-- Page Heading -->
-    @if (isset($header))
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-    @endif --}}
-
     <div class="container">
         {{ $slot }}
     </div>
 
     @stack('modals')
 
-    @livewireScripts
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    @livewireScripts
 </body>
 
 </html>

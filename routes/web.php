@@ -14,8 +14,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    Route::get('players', App\Livewire\Player::class)->name('players');
 });
 
-// Route::get('players', App\Livewire\Player::class)->name('players');
 
 Route::get('logout', [\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'destroy']);

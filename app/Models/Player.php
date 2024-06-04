@@ -9,5 +9,7 @@ class Player extends Model
 {
     use HasFactory;
 
-    public $fileable = ['name', 'is_goalkeeper', 'is_presence', 'level'];
+    protected $fillable = ['name', 'is_goalkeeper', 'is_presence', 'level'];
+
+    protected $attributes = ['level' => 0];
 }
