@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\{Model, Builder};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
@@ -12,4 +12,10 @@ class Player extends Model
     protected $fillable = ['name', 'is_goalkeeper', 'is_presence', 'level'];
 
     protected $attributes = ['level' => 0];
+
+    // Scopes
+    public function scopeIsPresence(Builder $query): void
+    {
+        $query->where('is_presence', 1);
+    }
 }

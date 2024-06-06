@@ -10,7 +10,7 @@ class Player extends Component
     public ModelsPlayer $player;
 
     protected $rules = [
-        'player.name' => 'required|min:6|unique:players,name',
+        'player.name' => 'required|min:6',
         'player.level' => 'required',
         'player.is_goalkeeper' => 'required',
         'player.is_presence' => 'required',
