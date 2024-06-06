@@ -190,5 +190,6 @@ return [
     */
 
     'attributes' => [],
-
+    'min_teams' => 'You need 2 (two) times to start the draw.',
+    'player_insufficient' => 'Needs :attribute players.'
 ];

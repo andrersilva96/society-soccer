@@ -216,4 +216,6 @@ return [
         'birth_date' => 'data de nascimento'
     ],
 
+    'min_teams' => 'Necessita de 2(dois) times para iniciar o sorteio.',
+    'player_insufficient' => 'Restam :attribute jogadores.'
 ];
