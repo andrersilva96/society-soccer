@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Player as ModelsPlayer;
+use App\Services\AlertService;
 use Livewire\Component;
 
 class Player extends Component
@@ -37,12 +38,15 @@ class Player extends Component
     {
         $this->validate();
         $this->player->save();
+        $msg = $this->player->wasRecentlyCreated ? 'Jogador criado!' : 'Jogador atualizado!';
+        AlertService::success($msg, $this);
         $this->player = new ModelsPlayer;
     }
 
     public function delete(ModelsPlayer $player)
     {
         $player->delete();
+        AlertService::success('Jogador exlcuído!', $this);
     }
 
     public function update(ModelsPlayer $player)
