@@ -8,8 +8,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::group(['as' => 'api.'], function() {
+Route::group(['as' => 'api.'], function () {
     Orion::resource('players', App\Http\Controllers\Api\PlayersController::class);
+    Route::get('sort', App\Http\Controllers\Api\Actions\Sort::class);
 })->middleware('auth:sanctum');
 
-Route::post('/login', App\Http\Controllers\Api\Actions\Login::class);
+Route::post('login', App\Http\Controllers\Api\Actions\Login::class);
