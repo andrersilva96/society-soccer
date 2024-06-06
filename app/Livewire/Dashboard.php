@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Http\Requests\SortRequest;
 use App\Services\TeamService;
 use App\Services\AlertService;
 use Livewire\Component;
@@ -17,7 +18,7 @@ class Dashboard extends Component
 
     public function submit()
     {
-        $this->validate(['num' => 'required|numeric|gt:0']);
+        $this->validate(SortRequest::rules());
         try {
             (new TeamService())->sort($this->num);
             $this->num = null;

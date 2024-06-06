@@ -10,19 +10,22 @@ class Player extends Component
 {
     public ModelsPlayer $player;
 
-    protected $rules = [
-        'player.name' => 'required|min:6',
-        'player.level' => 'required',
-        'player.is_goalkeeper' => 'required',
-        'player.is_presence' => 'required',
-    ];
-
     protected $validationAttributes = [
         'player.name' => 'nome',
         'player.level' => 'nível',
         'player.is_goalkeeper' => 'goleiro',
         'player.is_presence' => 'presença',
     ];
+
+    public function rules()
+    {
+        return [
+            'player.name' => 'required|min:6|unique:players,name,'.$this->player->id,
+            'player.level' => 'required',
+            'player.is_goalkeeper' => 'required',
+            'player.is_presence' => 'required',
+        ];
+    }
 
     public function mount()
     {
