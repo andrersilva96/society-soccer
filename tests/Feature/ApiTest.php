@@ -72,5 +72,5 @@ class ApiTest extends TestCase
                     ]
                 ]
             );
-    } */
+    }
 }
