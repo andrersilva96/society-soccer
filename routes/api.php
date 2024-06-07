@@ -11,7 +11,7 @@ Route::get('/user', function (Request $request) {
 Route::group(['as' => 'api.'], function () {
     Orion::resource('users', App\Http\Controllers\Api\UsersController::class);
     Orion::resource('players', App\Http\Controllers\Api\PlayersController::class);
-    Route::get('sort', App\Http\Controllers\Api\Actions\Sort::class);
+    Route::get('sort', App\Http\Controllers\Api\Actions\Sort::class)->name('sort');
 })->middleware('auth:sanctum');
 
 Route::post('login', App\Http\Controllers\Api\Actions\Login::class);
