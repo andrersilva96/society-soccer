@@ -12,6 +12,15 @@ An application that shows teams, based on each player's skills.
 
 # Documentation [here](https://documenter.getpostman.com/view/10880762/2sA3XJk4hm).
 
+👉 Requirements:
+
+1. PHP 8.2
+2. Node 21
+3. Composer
+4. MySQL
+5. Redis
+
+   
 ### Installation
 1. Clone this Repository
 ```sh
@@ -67,5 +76,11 @@ sail up
 php artisan serve
 ```
 
-7. Access the project
+7. NPM
+```sh
+npm install
+npm run build
+```
+
+8. Access the project
 [http://localhost:8080](http://localhost:8080)
